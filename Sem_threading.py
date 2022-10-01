@@ -17,10 +17,14 @@ def isPrime(n):
     return True
 
 def main(): 
+  start = time.time()
   n = 100000000000000
-  while True and n < 500000000000000:
+  while True and n < 700000000000000:
     if isPrime(n):
       print(str(n) + " is a prime number.")
     n+=1
+  end = time.time()
+  print("o programa demorou: {:.2f} segundos para finalizar".format(end - start))
+
 
 main()

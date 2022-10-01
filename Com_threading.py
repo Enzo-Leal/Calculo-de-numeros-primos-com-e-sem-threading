@@ -28,20 +28,35 @@ class PrimeFinderThread(threading.Thread):
     
   # Check all the numbers from startPos, 1 by 1, to find prime numbers
   def run(self):
+    start = time.time()
     n = self.startPos
-    while True:
+    while True and n < 100000000001000:
       if self.isPrime(n):
         print("Thread " + str(self.id) + ": " + str(n) + " is a prime number.")
       n+=1  
-      
+    end = time.time()
+    print("o programa demorou: {:.2f} segundos para finalizar no "+ str(self.id) +"º thread ".format(end - start))
+
 
 #Main Program Starts Here...
 #Let's intialise three different threads.Each thread will be used to dientify prime numbers starting with a different starting position
-thread1 = PrimeFinderThread(1,100000000000000)
-thread2 = PrimeFinderThread(2,300000000000000)
-thread3 = PrimeFinderThread(3,500000000000000)
+#thread1 = PrimeFinderThread(1,100000000000000)
+#thread2 = PrimeFinderThread(2,300000000000000)
+#thread3 = PrimeFinderThread(3,500000000000000)
 
 #Let's start our three threads to implement concurrent processing!
-thread1.start()
-thread2.start()
-thread3.start()
+#thread1.start()
+#thread2.start()
+#thread3.start()
+
+
+def main():
+  thread1 = PrimeFinderThread(1,100000000000500)
+  thread2 = PrimeFinderThread(2,100000000000700)
+  thread3 = PrimeFinderThread(3,100000000000800)
+
+  thread1.start()
+  thread2.start()
+  thread3.start()
+
+main()
