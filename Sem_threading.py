@@ -19,7 +19,7 @@ def isPrime(n):
 def main(): 
   start = time.time()
   n = 100000000000000
-  while True and n < 700000000000000:
+  while True and n < 600000000000000:
     if isPrime(n):
       print(str(n) + " is a prime number.")
     n+=1

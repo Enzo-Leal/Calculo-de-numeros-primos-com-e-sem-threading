@@ -10,7 +10,7 @@ class PrimeFinderThread(threading.Thread):
     self.id = id
     self.startPos = startPos
 
-  #A Function to decide if a number is a prime number or not
+  #Funcao para verificar se um numero é primo ou nao
   def isPrime(self,n):
     if (n <= 1) :
       return False
@@ -26,37 +26,34 @@ class PrimeFinderThread(threading.Thread):
         i = i + 6
       return True
     
-  # Check all the numbers from startPos, 1 by 1, to find prime numbers
+  # checa se o numero é primo e imprime na tela caso seja primo
   def run(self):
     start = time.time()
     n = self.startPos
-    while True and n < 100000000001000:
+    while True and n < 100000000000000:
       if self.isPrime(n):
         print("Thread " + str(self.id) + ": " + str(n) + " is a prime number.")
       n+=1  
     end = time.time()
-    print("o programa demorou: {:.2f} segundos para finalizar no "+ str(self.id) +"º thread ".format(end - start))
+    print(("o programa demorou: {:.2f} segundos para finalizar no "+ str(self.id) +"º thread ").format(end - start))
 
-
-#Main Program Starts Here...
-#Let's intialise three different threads.Each thread will be used to dientify prime numbers starting with a different starting position
-#thread1 = PrimeFinderThread(1,100000000000000)
-#thread2 = PrimeFinderThread(2,300000000000000)
-#thread3 = PrimeFinderThread(3,500000000000000)
-
-#Let's start our three threads to implement concurrent processing!
-#thread1.start()
-#thread2.start()
-#thread3.start()
-
-
+#função principal do programa
 def main():
-  thread1 = PrimeFinderThread(1,100000000000500)
-  thread2 = PrimeFinderThread(2,100000000000700)
-  thread3 = PrimeFinderThread(3,100000000000800)
+  #define o ID do thread e o número inicial para começar a procurar
+  thread1 = PrimeFinderThread(1,100000000000000)
+  thread2 = PrimeFinderThread(2,200000000000000)
+  thread3 = PrimeFinderThread(3,300000000000000)
+  thread4 = PrimeFinderThread(4,400000000000000)
+  thread5 = PrimeFinderThread(5,500000000000000)
+  thread6 = PrimeFinderThread(6,600000000000000)
 
+  
+  #inicia o thread
   thread1.start()
   thread2.start()
   thread3.start()
+  thread4.start()
+  thread5.start()
+  thread6.start()
 
 main()
