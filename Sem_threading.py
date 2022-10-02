@@ -18,11 +18,17 @@ def isPrime(n):
       i = i + 6
     return True
 
-def Soma_dos_primos():
-  for n in primos:
+def Soma_dos_numeros_ate_n():
+  for i in range(1,100000):
     soma = 0
-    soma += n
-    print("A soma dos primos é: " + str(soma))
+    soma = soma + i
+    print("A soma dos numeros ate n é: " + str(soma))
+
+def Subtração_dos_primos():
+  for i in range(1, 100000):
+    sub =0
+    sub = sub - i
+    print("A subtração dos numeros ate n é: " + str(sub))
 
   
 
@@ -35,7 +41,8 @@ def main():
       print(str(n) + " is a prime number.")
     n+=1
 
-  Soma_dos_primos()
+  Soma_dos_numeros_ate_n()
+  Subtração_dos_primos()
   end = time.time()
   print("o programa demorou: {:.2f} segundos para finalizar".format(end - start))
 
