@@ -28,17 +28,21 @@ def isPrime(n):
 
 
 def Soma_dos_numeros_ate_n():
+  start = time.time()
   for i in range(1,100000):
     soma = 0
     soma = soma + i
     print("A soma dos numeros ate n é: " + str(soma))
-
+  end = time.time()
+  print("o programa demorou: {:.2f} segundos para finalizar".format(end - start))
 def Subtração_dos_primos():
+  start = time.time()
   for i in range(1, 100000):
     sub =0
     sub = sub - i
     print("A subtração dos numeros ate n é: " + str(sub))
-
+  end = time.time()
+  print("o programa demorou: {:.2f} segundos para finalizar".format(end - start))
 #def Divisão_dos_primos():
 #  for i in range(1, 10000):
 #    div=0
@@ -53,11 +57,14 @@ def Subtração_dos_primos():
 
 def IMPRIME_PRIMOS():
   n = 1
+  start = time.time()
   while True and n < 60000:
     if isPrime(n):
       primos.append(n)
       print(str(n) + " is a prime number.")
     n+=1
+  end = time.time()
+  print("o programa demorou: {:.2f} segundos para finalizar".format(end - start))
 
     
 
